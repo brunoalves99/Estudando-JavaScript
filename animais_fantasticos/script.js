@@ -88,7 +88,7 @@
 //     console.log(p.innerText);
 // });
 
-// ********************* Classes e Atrubutos *********************************
+// ********************* Classes e Atributos *********************************
 
 // const menu = document.querySelector('.menu');
 
@@ -118,27 +118,67 @@
 
 // console.log(srcImg);
 
-const menuItens = document.querySelectorAll('.menu li');
-console.log(menuItens);
+// ******************* exercicios ************************
+// const menuItens = document.querySelectorAll('.menu li');
+// console.log(menuItens);
 
-menuItens.forEach((item) => {
-    item.classList.add('ativo');
-});
-console.log(menuItens);
+// menuItens.forEach((item) => {
+//     item.classList.add('ativo');
+// });
+// console.log(menuItens);
 
-for(let i = 1; i <= (menuItens.length - 1); i++) {
-    menuItens[i].classList.remove('ativo');
+// for(let i = 1; i <= (menuItens.length - 1); i++) {
+//     menuItens[i].classList.remove('ativo');
+// }
+// console.log(menuItens);
+
+// const imgs = document.querySelectorAll('img');
+// console.log(imgs);
+// imgs.forEach((img) => {
+//     if(img.hasAttribute('alt')) {
+//         console.log(`A img ${img.alt} tem o atributo alt`);
+//     }
+// });
+
+// const linkExterno = document.querySelector('.menu [href^="https"]');
+// console.log(linkExterno);
+// linkExterno.setAttribute('href','https://www.google.com');
+
+//**************** Dimensões e Distâncias ******************/
+
+const listaAnimais = document.querySelector('.animais-lista');
+
+const height = listaAnimais.scrollHeight;
+
+const animaisTop = listaAnimais.offsetTop;
+
+console.log(animaisTop);
+
+const primeiroh2 = document.querySelector('h2');
+const h2left = primeiroh2.offsetLeft;
+
+const h2rect = primeiroh2.getBoundingClientRect();
+
+console.log(h2rect.top);
+
+if(h2rect.top < 0) {
+    console.log('Passou do elemento');
 }
-console.log(menuItens);
 
-const imgs = document.querySelectorAll('img');
-console.log(imgs);
-imgs.forEach((img) => {
-    if(img.hasAttribute('alt')) {
-        console.log(`A img ${img.alt} tem o atributo alt`);
-    }
-});
+console.log(
+    window.innerWidth,
+    window.innerHeight,
+    window.outerWidth,
+    window.outerHeight,
+    window.pageYOffset,
+);
 
-const linkExterno = document.querySelector('.menu [href^="https"]');
-console.log(linkExterno);
-linkExterno.setAttribute('href','https://www.google.com');
+const small = window.matchMedia('(max-width: 600px)').matches;
+
+if(small) {
+    console.log('Usuário mobile');
+} else {
+    console.log('Usuário desktop');
+}
+
+console.log(small);

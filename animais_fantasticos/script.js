@@ -146,39 +146,136 @@
 
 //**************** Dimensões e Distâncias ******************/
 
-const listaAnimais = document.querySelector('.animais-lista');
+// const listaAnimais = document.querySelector('.animais-lista');
 
-const height = listaAnimais.scrollHeight;
+// const height = listaAnimais.scrollHeight;
 
-const animaisTop = listaAnimais.offsetTop;
+// const animaisTop = listaAnimais.offsetTop;
 
-console.log(animaisTop);
+// console.log(animaisTop);
 
-const primeiroh2 = document.querySelector('h2');
-const h2left = primeiroh2.offsetLeft;
+// const primeiroh2 = document.querySelector('h2');
+// const h2left = primeiroh2.offsetLeft;
 
-const h2rect = primeiroh2.getBoundingClientRect();
+// const h2rect = primeiroh2.getBoundingClientRect();
 
-console.log(h2rect.top);
+// console.log(h2rect.top);
 
-if(h2rect.top < 0) {
-    console.log('Passou do elemento');
+// if(h2rect.top < 0) {
+//     console.log('Passou do elemento');
+// }
+
+// console.log(
+//     window.innerWidth,
+//     window.innerHeight,
+//     window.outerWidth,
+//     window.outerHeight,
+//     window.pageYOffset,
+// );
+
+// const small = window.matchMedia('(max-width: 600px)').matches;
+
+// if(small) {
+//     console.log('Usuário mobile');
+// } else {
+//     console.log('Usuário desktop');
+// }
+
+// console.log(small);
+
+// **************** exercicios **************************
+
+// const img = document.querySelector('img');
+// const imgDistance = img.offsetTop;
+// //console.log(imgDistance);
+
+
+// function somaImagens() {
+//     const allImgs = document.querySelectorAll('img');
+//     let soma = 0;
+//     allImgs.forEach((img) => {
+//         //console.log(img.offsetWidth);
+//         soma += img.offsetWidth;
+//     });
+//     console.log(soma);
+// }
+
+// window.onload = function() {
+//     somaImagens();
+// }
+
+// const links = document.querySelectorAll('a');
+
+// links.forEach((link) => {
+//     const linkWidth = link.offsetWidth;
+//     const linkHeight = link.offsetHeight;
+//     if(linkWidth >= 48 && linkHeight >= 48) {
+//         console.log(link, "Possui boa acessibilidade");
+//     } else {
+//         console.log(link, "Não possui boa acessibilidade");
+//     }
+// });
+
+// console.log(links);
+
+// const browserSmall = window.matchMedia('(max-width: 720px').matches;
+
+// if(browserSmall) {
+//     const menu = document.querySelector('.menu');
+//     menu.classList.add('menu-mobile');
+// }
+
+// ******************** Eventos **********************
+
+const img = document.querySelector('img');
+
+function callback(event) {
+    console.log(event);
 }
 
-console.log(
-    window.innerWidth,
-    window.innerHeight,
-    window.outerWidth,
-    window.outerHeight,
-    window.pageYOffset,
-);
+//img.addEventListener('click', callback);
 
-const small = window.matchMedia('(max-width: 600px)').matches;
+const animaisLista = document.querySelector('.animais-lista');
 
-if(small) {
-    console.log('Usuário mobile');
-} else {
-    console.log('Usuário desktop');
+function callbackLista(event) {
+    console.log(event.currentTarget);
+    console.log(event.target);
+    console.log(event.type);
 }
 
-console.log(small);
+//animaisLista.addEventListener('click', callbackLista)
+
+const linkExterno = document.querySelector('a[href^="http"]');
+
+function handleLinkExterno(event) {
+    event.preventDefault();
+    //console.log(event);
+    console.log(this);
+    console.log(event.currentTarget);
+}
+
+linkExterno.addEventListener('click', handleLinkExterno);
+
+const h1 = document.querySelector('h1');
+
+function handleEvent(event) {
+    console.log(event.type, event);
+}
+
+// h1.addEventListener('click', handleEvent);
+// h1.addEventListener('mouseenter', handleEvent);
+// h1.addEventListener('mousemove', handleEvent);
+
+
+// window.addEventListener('scroll', handleEvent);
+// window.addEventListener('resize', handleEvent);
+// window.addEventListener('keydown', handleEvent);
+
+function handleKeyboard(event) {
+    if(event.key === 'f'){
+        document.body.classList.toggle('azul');
+    }
+    console.log(event.key);
+}
+
+window.addEventListener('keydown', handleKeyboard);

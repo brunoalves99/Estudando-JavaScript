@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+html.textomaior {
+    font-size: 150%;
+}
+
 .azul {
     background: teal;
 }

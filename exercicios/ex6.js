@@ -11,7 +11,7 @@ const maria = new Pessoa('Maria', 25);
 const bruno = new Pessoa('Bruno', 15);
 
 
-function Dom(element){
+function Dom(element){ 
     this.elements = document.querySelectorAll(element);
     this.adicionaClasse = function(classe) {
         this.elements.forEach((el) => {

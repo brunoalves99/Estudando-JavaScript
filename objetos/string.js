@@ -47,7 +47,7 @@ console.log(transacao1.slice(-5));
 // .lastIndexOf(search) ultimo que aparece
 console.log(fruta.lastIndexOf('a'));
 
-// .padStart(n, string)
+// .padStart(n, string) preenche a string original com um determinado caractere
 // .padEnd(n, string)
 
 const preco = 'R$ 99,00';
